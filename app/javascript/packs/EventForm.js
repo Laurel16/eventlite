@@ -1,33 +1,16 @@
-import React from 'react'
+import React from'react'
+import Event from'./Event'
 
-class EventForm extends React.Component{
-  constructor(props) {
-    super(props)
-    this.state = {
-      title: '',
-      start_datetime: '',
-      location: ''
-    }
-
-  }
-
-  handleInput = (e) => {
-    const name = e.target.name;
-    const newState = {};
-    newState[name] = e.taget.value;
-    this.setState(newState)
-    e.preventDefault();
-  }
-  render () {
-return (
+const EventForm=(props)=>(
   <div>
-        <h4>Create an Event:</h4>
-        <form>
-          <input type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.handleInput} />
-          <input type="text" name="start_datetime" placeholder="Date" value={this.state.start_datetime} onChange={this.handleInput} />
-          <input type="text" name="location" placeholder="Location" value={this.state.location} onChange={this.handleInput}/>
-          <button type="submit">Create Event</button>
-        </form>
-      </div>
-) }
-} export default EventForm
+    <h4>Create an Event:</h4>
+    <form onSubmit={props.handleSubmit}>
+<input type="text" name="title" placeholder="Title" value={props.title} onChange={props.handleInput}/>
+<input type="text" name="start_datetime" placeholder="Date" value={props.start_datetime} onChange={props.handleInput}/>
+<input type="text" name="location" placeholder="Location" value={props.location} onChange={props.handleInput}/>
+      <input type="submit" value="Create Event" />
+    </form>
+</div>
+)
+
+export default EventForm
