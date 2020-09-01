@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import EventsList from './EventsList'
+import EventForm from'./EventForm'
 
 const Eventlite = props => (
   <div>
-    <EventsList events={props.events} />
+  <EventForm />
+  <EventsList events={props.events} />
    </div>
   )
 
