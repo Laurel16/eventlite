@@ -6,6 +6,7 @@ import EventsList from'./EventsList'
 import EventForm from'./EventForm'
 import FormErrors from'./FormErrors'
 import validations from'../validations'
+import PropTypes from 'prop-types'
 
 class Eventlite extends React.Component{
   constructor(props) {
@@ -15,7 +16,7 @@ class Eventlite extends React.Component{
       title: {value: '', valid: false},
       start_datetime: {value: '', valid: false},
       location: {value: '', valid: false},
-      formErrors: {},
+      formErrors: '',
       formValid: false
  }
 }
@@ -130,6 +131,11 @@ render() {
   )
  }
 }
+
+Eventlite.propTypes = {
+  events: PropTypes.array.isRequired
+}
+
 
 document.addEventListener('DOMContentLoaded',() =>{
   const node = document.getElementById('events_data')
