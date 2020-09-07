@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'react-rails'
 gem'rack-cors'
+gem'devise'
+gem'devise_token_auth'
+
 
 
 group :development, :test do
