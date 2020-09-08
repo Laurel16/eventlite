@@ -32,7 +32,7 @@ def update
 end
 
 def destroy
-@event = Event.find(params[:id])
+@event = current_user.events.find(params[:id])
 if @event.destroy
     head :no_content, status: :ok
   else
